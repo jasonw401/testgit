@@ -6,6 +6,7 @@
 	<property name="src" location="src"/>
 	<property name="build" location="ant-build"/>
 	<property name="dist" location="dist"/>
+	<property name="report" location="junit-report"/>
 
 	<target name="info">
 		<echo>Hello World - Welcome to Apache Ant!!</echo>
@@ -30,13 +31,14 @@
 	</target>
 
 	<target name="runTests" description="Run JUnit tests">
+		<mkdir dir="${report}" />
 	    <junit printsummary="yes" dir="${build}" fork="true">
 	        <classpath>
 	            <pathelement location="${build}" />
 				<pathelement location="ant-lib/junit-4.12.jar"/>
 				<pathelement location="ant-lib/hamcrest-core-1.3.jar"/>
 	        </classpath>
-	        <test name="test.com.home.tom.BugLogicTest" haltonfailure="no" outfile="result">
+	        <test name="test.com.home.tom.BugLogicTest" haltonfailure="no" todir="${report}">
 	            <formatter type="xml" />
 	        </test>
 	    </junit>
