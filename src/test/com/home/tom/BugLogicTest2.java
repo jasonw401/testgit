@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.home.tom.BugLogic;
 
-public class BugLogicTest {
+public class BugLogicTest2 {
 	BugLogic bug = new BugLogic();
 
 	@Test
