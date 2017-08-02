@@ -33,9 +33,4 @@ public class BugLogicTest {
 		assertTrue(bug.lessThanFive(6));
 	}
 
-	@Test
-	public void testLessThanFive7(){
-		assertTrue(false); //added for showing error in report 
-	}
-
 }

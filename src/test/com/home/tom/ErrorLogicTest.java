@@ -25,7 +25,7 @@ public class ErrorLogicTest {
 
 	@Test
 	public void testLessThanFive7(){
-		assertTrue(false); //added for showing error in report 
+		assertTrue(bug.lessThanFive(5));  
 	}
 
 }
