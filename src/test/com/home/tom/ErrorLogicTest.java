@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.home.tom.BugLogic;
 
-public class BugLogicTest2 {
+public class ErrorLogicTest {
 	BugLogic bug = new BugLogic();
 
 	@Test
@@ -21,16 +21,6 @@ public class BugLogicTest2 {
 	@Test
 	public void testLessThanFive4(){
 		assertTrue(bug.lessThanFive(0));
-	}
-
-	@Test
-	public void testLessThanFive5(){
-		assertTrue(bug.lessThanFive(5));
-	}
-
-	@Test
-	public void testLessThanFive6(){
-		assertTrue(bug.lessThanFive(6));
 	}
 
 	@Test

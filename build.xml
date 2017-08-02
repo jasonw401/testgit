@@ -30,22 +30,24 @@
 		</javac>
 	</target>
 
-	<target name="runTests" description="Run JUnit tests">
+	<target name="runTests" depends="compile" description="Run JUnit tests">
 		<mkdir dir="${report}" />
-	    <junit printsummary="yes" dir="${build}" fork="true">
-	        <classpath>
-	            <pathelement location="${build}" />
+		<junit printsummary="yes" dir="${build}" fork="true">
+			<classpath>
+				<pathelement location="${build}" />
 				<pathelement location="ant-lib/junit-4.12.jar"/>
 				<pathelement location="ant-lib/hamcrest-core-1.3.jar"/>
-	        </classpath>
-	        <test name="test.com.home.tom.BugLogicTest" haltonfailure="no" todir="${report}">
-	            <formatter type="xml" />
-	        </test>
-	    </junit>
+			</classpath>
+			<batchtest fork="yes" haltonfailure="no" todir="${report}">
+				<formatter type="xml" />
+				<fileset dir="${src}">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
 	</target>
-	
-	<target name="dist" depends="compile"
-        description="generate the distribution">
+
+	<target name="dist" depends="compile" description="generate the distribution">
 		<!-- Create the distribution directory -->
 		<mkdir dir="${dist}/lib"/>
 
